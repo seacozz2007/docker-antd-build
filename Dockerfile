@@ -13,7 +13,7 @@ RUN  curl -sL -o /etc/yum.repos.d/khara-nodejs.repo https://copr.fedoraproject.o
     cnpm i  && \
     cnpm install jsonp  && \
     cd /tmp && \
-    rm -rf -y antd-admin && \
+    rm -rf -y antd-admin
 
 
 #Create dist folder
