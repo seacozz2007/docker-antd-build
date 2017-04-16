@@ -9,7 +9,7 @@ RUN  curl -sL -o /etc/yum.repos.d/khara-nodejs.repo https://copr.fedoraproject.o
 #antd-admin
     yum install git && \
     git clone https://github.com/zuiidea/antd-admin.git /tmp/antd-admin && \
-    cd /tmp/antd-admin
+    cd /tmp/antd-admin && \
     cnpm i  && \
     cnpm install jsonp  && \
     cd /tmp
