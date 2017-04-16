@@ -12,7 +12,7 @@ RUN  curl -sL -o /etc/yum.repos.d/khara-nodejs.repo https://copr.fedoraproject.o
     cd /tmp/antd-admin && \
     cnpm i  && \
     cnpm install jsonp  && \
-    cd /tmp
+    cd /tmp && \
     rm -rf -y antd-admin && \
 
 
