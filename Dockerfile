@@ -3,11 +3,10 @@ MAINTAINER Eric <eric.zhang@famesmart.com>
 
 #install npm cnpm
 RUN  curl -sL -o /etc/yum.repos.d/khara-nodejs.repo https://copr.fedoraproject.org/coprs/khara/nodejs/repo/epel-7/khara-nodejs-epel-7.repo && \
-    yum install -y nodejs nodejs-npm && \
+    yum install -y nodejs nodejs-npm git && \
     npm install cnpm -g --registry=https://registry.npm.taobao.org && \
 
 #antd-admin
-    yum install git && \
     git clone https://github.com/zuiidea/antd-admin.git /tmp/antd-admin && \
     cd /tmp/antd-admin && \
     cnpm i  && \
