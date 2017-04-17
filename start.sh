@@ -17,8 +17,6 @@ set -e
             $BRANCH = dev
     fi
 
-
-
     git clone http://test:testfamesmart2017@git.famesmart.com/Jully/community-backend.git -b $BRANCH /var/community-backend
 
     cd /var/community-backend/admin
@@ -32,12 +30,7 @@ set -e
         npm run build
         rm -rf $DATA_DIR$DIST_DIR
         cp -r dist $DATA_DIR$DIST_DIR
+        rm -rf /var/community-backend
      fi
 
-    
-    
-    
-
-
-git clone http://test:testfamesmart2017@git.famesmart.com/Jully/community-backend.git -b eric.zhang /var/community-backend
 
