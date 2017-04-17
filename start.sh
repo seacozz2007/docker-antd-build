@@ -12,29 +12,32 @@ DATA_DIR=/data/www/community-backend
 set -e
 
     if [ -z "$BRANCH" ]; then
-            echo >&2 'error:  missing BRANCH'
-            echo >&2 '  Did you forget to add -e BRANCH=... ?'
-            exit 1
+            echo >&2 'warning:  missing BRANCH'
+            echo >&2 '  Did you forget to add -e BRANCH=... (dev) ?'
+            $BRANCH = dev
     fi
 
-    if [ -z "$DIST_DIR" ]; then
-         echo >&2 'error:  missing DIST_DIR'
-         echo >&2 '  Did you forget to add -e DIST_DIR=... ?'
-         exit 1
-     fi
-
-     deploy_path="/tmp/community-backend"
-     project_path="git@git.famesmart.com:Jully/community-backend.git -b "$BRANCH
 
 
+    git clone http://test:testfamesmart2017@git.famesmart.com/Jully/community-backend.git -b $BRANCH /var/community-backend
 
-    git clone $project_path $deploy_path
-    cd $deploy_path
+    cd /var/community-backend/admin
     cnpm  i 
     cnpm install jsonp
     npm run lint
-    rm -rf $DATA_DIR$DIST_DIR
-    cp -r dist $DATA_DIR$DIST_DIR
+    if [ -z "$DIST_DIR" ]; then
+         echo >&2 'warning:  missing DIST_DIR'
+         echo >&2 '  Did you forget to add -e DIST_DIR=... '
+    else
+        npm run build
+        rm -rf $DATA_DIR$DIST_DIR
+        cp -r dist $DATA_DIR$DIST_DIR
+     fi
+
+    
+    
+    
 
 
+git clone http://test:testfamesmart2017@git.famesmart.com/Jully/community-backend.git -b eric.zhang /var/community-backend
 

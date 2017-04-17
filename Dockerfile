@@ -7,11 +7,11 @@ RUN  curl -sL -o /etc/yum.repos.d/khara-nodejs.repo https://copr.fedoraproject.o
     npm install cnpm -g --registry=https://registry.npm.taobao.org && \
 
 #antd-admin
-    git clone https://github.com/zuiidea/antd-admin.git /tmp/antd-admin && \
-    cd /tmp/antd-admin && \
+    git clone https://github.com/zuiidea/antd-admin.git /var/antd-admin && \
+    cd /var/antd-admin && \
     cnpm i  && \
     cnpm install jsonp  && \
-    cd /tmp && \
+    cd /var && \
     rm -rf antd-admin
 
 

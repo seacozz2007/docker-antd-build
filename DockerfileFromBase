@@ -1,0 +1,15 @@
+FROM antd-base
+MAINTAINER Eric <eric.zhang@famesmart.com>
+
+#Create dist folder
+VOLUME ["/data/www"]
+
+#Start
+ADD start.sh /
+RUN chmod +x /start.sh
+
+#Start it
+#ENTRYPOINT ["/start.sh"]
+
+#Start web server
+#CMD ["/bin/bash", "/start.sh"]
