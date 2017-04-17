@@ -9,7 +9,7 @@ ADD start.sh /
 RUN chmod +x /start.sh
 
 #Start it
-#ENTRYPOINT ["/start.sh"]
+ENTRYPOINT ["/start.sh"]
 
 #Start web server
-#CMD ["/bin/bash", "/start.sh"]
+CMD ["/bin/bash", "/start.sh"]

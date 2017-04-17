@@ -32,5 +32,5 @@ set -e
         cp -r dist $DATA_DIR$DIST_DIR
         rm -rf /var/community-backend
      fi
-
+     exit 0
 
