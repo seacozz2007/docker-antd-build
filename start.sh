@@ -26,9 +26,6 @@ set -e
      deploy_path="/tmp/community-backend"
      project_path="git@git.famesmart.com:Jully/community-backend.git -b "$BRANCH
 
-     if [  -d "$deploy_path" ]; then
-        rm -rf $deploy_path
-     fi
     git clone $project_path $deploy_path
     cd $deploy_path
     cnpm  i 
