@@ -4,7 +4,7 @@ MAINTAINER Eric <eric.zhang@famesmart.com>
 #install npm cnpm
 RUN  curl -sL -o /etc/yum.repos.d/khara-nodejs.repo https://copr.fedoraproject.org/coprs/khara/nodejs/repo/epel-7/khara-nodejs-epel-7.repo && \
     rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release && \
-    yum install -y nodejs nodejs-npm git && \
+    yum install -y nodejs nodejs-npm git --nogpgcheck && \
     npm install cnpm -g --registry=https://registry.npm.taobao.org && \
 
 #antd-admin
