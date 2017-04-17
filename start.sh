@@ -7,7 +7,7 @@
 # Created Time: 2017/4/3
 #########################################################################
 
-DATA_DIR=/data/www
+DATA_DIR=/data/www/community-backend
 
 set -e
 
@@ -26,11 +26,14 @@ set -e
      deploy_path="/tmp/community-backend"
      project_path="git@git.famesmart.com:Jully/community-backend.git -b "$BRANCH
 
+
+
     git clone $project_path $deploy_path
     cd $deploy_path
     cnpm  i 
     cnpm install jsonp
     npm run lint
+    rm -rf $DATA_DIR$DIST_DIR
     cp -r dist $DATA_DIR$DIST_DIR
 
 
